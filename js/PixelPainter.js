@@ -20,6 +20,7 @@ function clickedGrid() {
       var cell = document.createElement('td');
       cell.className = "clickCells" + i + j;
       tr.appendChild(cell);
+      cell.addEventListener("click", onClickFunction);
       cell.innerHTML = "test";
     }
   }
@@ -27,6 +28,11 @@ function clickedGrid() {
 return grid;
 
 } clickedGrid();
+
+
+function onClickFunction() {
+  console.log("clicking")
+}
 
 function colorGrid(){
 
