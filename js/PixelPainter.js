@@ -16,7 +16,10 @@ function eraseColor(){
 }
 
 function clearAll() {
-  document.getElementsByClassName("clickCells").style.background = "white";
+  var allPixels = document.getElementsByClassName("clickCells");
+  for(var i = 0; i < allPixels.length; i++){
+    allPixels[i].style.background = "white";
+  }
 
 }
 
@@ -35,15 +38,15 @@ function clickedGrid() {
       cell.className = "clickCells";
       tr.appendChild(cell);
       cell.addEventListener("click", setColor);
-      cell.innerHTML = "test";
+      cell.innerHTML = "cell";
     }
   }
 return grid;
 } clickedGrid();
 
 
-var currentColor = 0;
-console.log(currentColor)
+var currentColor;
+console.log(currentColor);
 
 function setColor() {
   this.style.background = currentColor;
