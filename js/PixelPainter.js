@@ -1,3 +1,18 @@
+var clearButton = document.createElement('button');
+clearButton.className = "clear-button";
+document.body.appendChild(clearButton);
+clearButton.innerHTML = "Clear"
+
+
+var eraseButton = document.createElement('button');
+eraseButton.className = "erase-button";
+document.body.appendChild(eraseButton);
+eraseButton.innerHTML = "Erase";
+eraseButton.addEventListener("click", eraseColor);
+
+function eraseColor(){
+  currentColor = "white";
+}
 
 
 function clickedGrid() {
@@ -18,13 +33,12 @@ function clickedGrid() {
       cell.innerHTML = "test";
     }
   }
-
 return grid;
-
 } clickedGrid();
 
 
 var currentColor = 0;
+console.log(currentColor)
 
 function setColor() {
   this.style.background = currentColor;
