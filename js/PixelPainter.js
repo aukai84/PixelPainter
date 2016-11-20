@@ -1,7 +1,9 @@
 
+
 function stub(argument) {
   //this is just a stub
 }
+
 
 
 function clickedGrid() {
@@ -46,4 +48,3 @@ function colorGrid(){
     return colorGrid;
 
 } colorGrid();
-
