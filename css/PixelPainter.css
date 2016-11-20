@@ -1,5 +1,9 @@
 .clickCells {
-  border-style: thin;
+  border-style: dotted;
+  border-width: .1px;
   border-spacing: 0px;
-
+  border-color: grey;
+  padding: 0;
+  height: 5px;
+  width: 5px;
 }

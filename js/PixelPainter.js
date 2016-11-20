@@ -38,7 +38,7 @@ function clickedGrid() {
       cell.className = "clickCells";
       tr.appendChild(cell);
       cell.addEventListener("click", setColor);
-      cell.innerHTML = "test";
+      cell.innerHTML = "cell";
     }
   }
 return grid;
