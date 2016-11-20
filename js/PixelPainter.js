@@ -1,7 +1,8 @@
 var clearButton = document.createElement('button');
 clearButton.className = "clear-button";
 document.body.appendChild(clearButton);
-clearButton.innerHTML = "Clear"
+clearButton.innerHTML = "Clear";
+clearButton.addEventListener("click", clearAll);
 
 
 var eraseButton = document.createElement('button');
@@ -14,6 +15,10 @@ function eraseColor(){
   currentColor = "white";
 }
 
+function clearAll() {
+  document.getElementsByClassName("clickCells").style.background = "white";
+
+}
 
 function clickedGrid() {
   // Test change by Andrea
@@ -27,7 +32,7 @@ function clickedGrid() {
 
     for(var j = 0; j < 20; j++){
       var cell = document.createElement('td');
-      cell.className = "clickCells" + i + j;
+      cell.className = "clickCells";
       tr.appendChild(cell);
       cell.addEventListener("click", setColor);
       cell.innerHTML = "test";
