@@ -1,11 +1,5 @@
 
 
-function stub(argument) {
-  //this is just a stub
-}
-
-
-
 function clickedGrid() {
   // Test change by Andrea
   var grid = document.createElement('table');
@@ -34,6 +28,10 @@ function onClickFunction() {
   console.log("clicking")
 }
 
+function grabColor() {
+  console.log("clickingcolor")
+}
+
 function colorGrid(){
 
   var colorGrid = document.createElement('table');
@@ -48,6 +46,7 @@ function colorGrid(){
       var cell = document.createElement('td');
       cell.className = "colorCells" + i + j;
       tr.appendChild(cell);
+      cell.addEventListener("click", grabColor);
       cell.innerHTML = "colors";
     }
    }
