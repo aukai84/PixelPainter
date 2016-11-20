@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 function stub(argument) {
   //this is just a stub
 }
-=======
+
 
 function clickedGrid() {
   // Test change by Andrea
@@ -46,4 +46,4 @@ function colorGrid(){
     return colorGrid;
 
 } colorGrid();
->>>>>>> master
+
