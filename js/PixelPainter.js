@@ -11,7 +11,7 @@ function clickedGrid() {
 
     for(var j = 0; j < 20; j++){
       var cell = document.createElement('td');
-      cell.className = "clickCells";
+      cell.className = "clickCells" + i + j;
       tr.appendChild(cell);
       cell.innerHTML = "test";
     }
@@ -33,7 +33,7 @@ function colorGrid(){
 
     for(var j = 0; j < 5; j++){
       var cell = document.createElement('td');
-      cell.className = "colorCells";
+      cell.className = "colorCells" + i + j;
       tr.appendChild(cell);
       cell.innerHTML = "colors";
     }
