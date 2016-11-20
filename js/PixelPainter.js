@@ -14,7 +14,7 @@ function clickedGrid() {
       var cell = document.createElement('td');
       cell.className = "clickCells" + i + j;
       tr.appendChild(cell);
-      cell.addEventListener("click", onClickFunction);
+      cell.addEventListener("click", setColor);
       cell.innerHTML = "test";
     }
   }
@@ -24,16 +24,21 @@ return grid;
 } clickedGrid();
 
 
-function onClickFunction() {
-  console.log("clicking")
+var currentColor = 0;
+
+function setColor() {
+  this.style.background = currentColor;
+  console.log(currentColor, 'currentColor');
 }
 
 function grabColor() {
-  console.log("clickingcolor")
+  var thisColor = this.style.background;
+  console.log(thisColor, 'this color');
+  currentColor = thisColor;
+  // console.log("clickingcolor")
 }
 
 function colorGrid(){
-
   var colorGrid = document.createElement('table');
   colorGrid.className = "colorGrid";
   document.body.appendChild(colorGrid);
@@ -48,8 +53,19 @@ function colorGrid(){
       tr.appendChild(cell);
       cell.addEventListener("click", grabColor);
       cell.innerHTML = "colors";
+      cell.style.background = getRandomColor();
     }
    }
     return colorGrid;
 
 } colorGrid();
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    // console.log(color);
+    return color;
+}
