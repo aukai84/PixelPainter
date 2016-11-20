@@ -1,4 +1,11 @@
 
+
+function stub(argument) {
+  //this is just a stub
+}
+
+
+
 function clickedGrid() {
   // Test change by Andrea
   var grid = document.createElement('table');
