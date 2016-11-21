@@ -1,24 +1,4 @@
 
-function clickedGrid() {
-  // Test change by Andrea
-  var grid = document.createElement('table');
-  grid.className = "grid";
-  document.body.appendChild(grid);
-
-  for(var i = 0; i < 20; i++){
-    var tr = document.createElement('tr');
-    grid.appendChild(tr);
-
-    for(var j = 0; j < 20; j++){
-      var cell = document.createElement('td');
-      cell.className = "clickCells";
-      tr.appendChild(cell);
-      cell.addEventListener("click", setColor);
-      cell.innerHTML = "   ";
-    }
-  }
-return grid;
-} clickedGrid();
 
 
 var currentColor;
@@ -31,31 +11,29 @@ function setColor() {
 
 function grabColor() {
   var thisColor = this.style.background;
-  console.log(thisColor, 'this color');
   currentColor = thisColor;
   // console.log("clickingcolor")
 }
 
 function colorGrid(){
   var colorGrid = document.createElement('table');
-  colorGrid.className = "colorGrid";
+  colorGrid.className = "color-grid";
   document.body.appendChild(colorGrid);
 
-  for(var i = 0; i < 10; i++){
+  for(var i = 0; i < 8; i++){
     var tr = document.createElement('tr');
     colorGrid.appendChild(tr);
 
-    for(var j = 0; j < 5; j++){
+    for(var j = 0; j < 2; j++){
       var cell = document.createElement('td');
-      cell.className = "colorCells" + i + j;
+      cell.className = "color-cells";
       tr.appendChild(cell);
       cell.addEventListener("click", grabColor);
-      cell.innerHTML = "colors";
+      cell.innerHTML = "  ";
       cell.style.background = getRandomColor();
     }
    }
     return colorGrid;
-
 } colorGrid();
 
 function getRandomColor() {
@@ -68,25 +46,46 @@ function getRandomColor() {
     return color;
 }
 
-var clearButton = document.createElement('button');
+var clearButton = document.createElement('div');
 clearButton.className = "clear-button";
 document.body.appendChild(clearButton);
 clearButton.innerHTML = "Clear";
 clearButton.addEventListener("click", clearAll);
 
 
-var eraseButton = document.createElement('button');
+var eraseButton = document.createElement('div');
 eraseButton.className = "erase-button";
 document.body.appendChild(eraseButton);
 eraseButton.innerHTML = "Erase";
 eraseButton.addEventListener("click", eraseColor);
+
+
+function clickedGrid() {
+  var grid = document.createElement('table');
+  grid.className = "grid";
+  document.body.appendChild(grid);
+
+  for(var i = 0; i < 20; i++){
+    var tr = document.createElement('tr');
+    grid.appendChild(tr);
+
+    for(var j = 0; j < 20; j++){
+      var cell = document.createElement('td');
+      cell.className = "click-cells";
+      tr.appendChild(cell);
+      cell.addEventListener("click", setColor);
+      cell.innerHTML = "   ";
+    }
+  }
+return grid;
+} clickedGrid();
 
 function eraseColor(){
   currentColor = "white";
 }
 
 function clearAll() {
-  var allPixels = document.getElementsByClassName("clickCells");
+  var allPixels = document.getElementsByClassName("click-cells");
   for(var i = 0; i < allPixels.length; i++){
     allPixels[i].style.background = "white";
   }

@@ -1,24 +1,51 @@
-.clickCells {
+.color-cells {
+  display: inline-block;
+  border-style: solid;
+  border-width: .01px;
+  border-spacing: 0px;
+  border-color: grey;
+  height: 40px;
+  width: 40px;
+}
+
+.click-cells {
   border-style: solid;
   border-width: .1px;
   border-spacing: 0px;
   border-color: grey;
-  /*padding: 0;*/
   height: 20px;
   width: 20px;
 }
+
 .grid {
   display: inline-block;
   margin-left: 20px;
   border-collapse: collapse;
   vertical-align: top
-
 }
 
-.colorGrid {
+.color-grid {
   display: inline-block;
   float: left;
   border-collapse: collapse;
   vertical-align: top
+}
 
+.erase-button {
+  display: inline-block;
+  border-style: solid;
+  border-width: .1px;
+  border-spacing: 0px;
+  border-color: grey;
+  height: 20px;
+  width: 45px;
+}
+.clear-button {
+  display: inline-block;
+  border-width: .1px;
+  border-spacing: 0px;
+  border-color: grey;
+  border-style: solid;
+  height: 20px;
+  width: 45px;
 }
