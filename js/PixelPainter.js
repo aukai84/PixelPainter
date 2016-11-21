@@ -1,27 +1,3 @@
-var clearButton = document.createElement('button');
-clearButton.className = "clear-button";
-document.body.appendChild(clearButton);
-clearButton.innerHTML = "Clear";
-clearButton.addEventListener("click", clearAll);
-
-
-var eraseButton = document.createElement('button');
-eraseButton.className = "erase-button";
-document.body.appendChild(eraseButton);
-eraseButton.innerHTML = "Erase";
-eraseButton.addEventListener("click", eraseColor);
-
-function eraseColor(){
-  currentColor = "white";
-}
-
-function clearAll() {
-  var allPixels = document.getElementsByClassName("clickCells");
-  for(var i = 0; i < allPixels.length; i++){
-    allPixels[i].style.background = "white";
-  }
-
-}
 
 function clickedGrid() {
   // Test change by Andrea
@@ -38,7 +14,7 @@ function clickedGrid() {
       cell.className = "clickCells";
       tr.appendChild(cell);
       cell.addEventListener("click", setColor);
-      cell.innerHTML = "cell";
+      cell.innerHTML = "   ";
     }
   }
 return grid;
@@ -90,4 +66,29 @@ function getRandomColor() {
     }
     // console.log(color);
     return color;
+}
+
+var clearButton = document.createElement('button');
+clearButton.className = "clear-button";
+document.body.appendChild(clearButton);
+clearButton.innerHTML = "Clear";
+clearButton.addEventListener("click", clearAll);
+
+
+var eraseButton = document.createElement('button');
+eraseButton.className = "erase-button";
+document.body.appendChild(eraseButton);
+eraseButton.innerHTML = "Erase";
+eraseButton.addEventListener("click", eraseColor);
+
+function eraseColor(){
+  currentColor = "white";
+}
+
+function clearAll() {
+  var allPixels = document.getElementsByClassName("clickCells");
+  for(var i = 0; i < allPixels.length; i++){
+    allPixels[i].style.background = "white";
+  }
+
 }
