@@ -49,6 +49,17 @@ function getRandomColor() {
 }
 
 
+var clearButton = document.createElement('div');
+clearButton.className = "clear-button";
+document.getElementById('pixelPainter').appendChild(clearButton);
+clearButton.innerHTML = "Clear";
+clearButton.addEventListener("click", clearAll);
+
+var eraseButton = document.createElement('div');
+eraseButton.className = "erase-button";
+document.getElementById('pixelPainter').appendChild(eraseButton);
+eraseButton.innerHTML = "Erase";
+eraseButton.addEventListener("click", eraseColor);
 
 function clickedGrid() {
   var grid = document.createElement('table');
@@ -74,17 +85,6 @@ function eraseColor(){
   currentColor = "white";
 }
 
-var clearButton = document.createElement('div');
-clearButton.className = "clear-button";
-document.getElementById('pixelPainter').appendChild(clearButton);
-clearButton.innerHTML = "Clear";
-clearButton.addEventListener("click", clearAll);
-
-var eraseButton = document.createElement('div');
-eraseButton.className = "erase-button";
-document.getElementById('pixelPainter').appendChild(eraseButton);
-eraseButton.innerHTML = "Erase";
-eraseButton.addEventListener("click", eraseColor);
 
 function clearAll() {
   var allPixels = document.getElementsByClassName("click-cells");
