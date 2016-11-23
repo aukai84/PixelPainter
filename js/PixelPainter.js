@@ -15,10 +15,12 @@ function grabColor() {
   // console.log("clickingcolor")
 }
 
+
+
 function colorGrid(){
   var colorGrid = document.createElement('table');
   colorGrid.className = "color-grid";
-  document.body.appendChild(colorGrid);
+  document.getElementById('pixelPainter').appendChild(colorGrid);
 
   for(var i = 0; i < 8; i++){
     var tr = document.createElement('tr');
@@ -46,24 +48,12 @@ function getRandomColor() {
     return color;
 }
 
-var clearButton = document.createElement('div');
-clearButton.className = "clear-button";
-document.body.appendChild(clearButton);
-clearButton.innerHTML = "Clear";
-clearButton.addEventListener("click", clearAll);
-
-
-var eraseButton = document.createElement('div');
-eraseButton.className = "erase-button";
-document.body.appendChild(eraseButton);
-eraseButton.innerHTML = "Erase";
-eraseButton.addEventListener("click", eraseColor);
 
 
 function clickedGrid() {
   var grid = document.createElement('table');
   grid.className = "grid";
-  document.body.appendChild(grid);
+  document.getElementById('pixelPainter').appendChild(grid);
 
   for(var i = 0; i < 20; i++){
     var tr = document.createElement('tr');
@@ -83,6 +73,18 @@ return grid;
 function eraseColor(){
   currentColor = "white";
 }
+
+var clearButton = document.createElement('div');
+clearButton.className = "clear-button";
+document.getElementById('pixelPainter').appendChild(clearButton);
+clearButton.innerHTML = "Clear";
+clearButton.addEventListener("click", clearAll);
+
+var eraseButton = document.createElement('div');
+eraseButton.className = "erase-button";
+document.getElementById('pixelPainter').appendChild(eraseButton);
+eraseButton.innerHTML = "Erase";
+eraseButton.addEventListener("click", eraseColor);
 
 function clearAll() {
   var allPixels = document.getElementsByClassName("click-cells");
