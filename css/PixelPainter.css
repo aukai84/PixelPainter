@@ -1,5 +1,36 @@
-.color-cells {
+#pixelPainter {
   display: inline-block;
+
+}
+
+.color-container {
+  display: inline-block;
+
+}
+
+.grid-container {
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: top
+
+}
+
+.button-container {
+  display: inline;
+}
+
+.color-grid {
+  float: left;
+  border-collapse: collapse;
+  vertical-align: top
+}
+
+.grid {
+  border-collapse: collapse;
+  vertical-align: top
+}
+
+.color-cells {
   border-style: solid;
   border-width: .01px;
   border-spacing: 0px;
@@ -9,6 +40,7 @@
 }
 
 .click-cells {
+  border-collapse: collapse;
   border-style: solid;
   border-width: .1px;
   border-spacing: 0px;
@@ -16,36 +48,19 @@
   height: 20px;
   width: 20px;
 }
-
-.grid {
-  display: inline-block;
-  margin-left: 20px;
-  border-collapse: collapse;
-  vertical-align: top
-}
-
-.color-grid {
-  display: inline-block;
-  float: left;
-  border-collapse: collapse;
-  vertical-align: top
-}
-
+/*
 .erase-button {
-  display: inline-block;
+  display: inline;
   border-style: solid;
-  border-width: .1px;
-  border-spacing: 0px;
   border-color: grey;
-  height: 20px;
-  width: 45px;
+  height: 40px;
+  width: 85px;
 }
+
 .clear-button {
-  display: inline-block;
-  border-width: .1px;
-  border-spacing: 0px;
+  display: inline;
   border-color: grey;
   border-style: solid;
-  height: 20px;
-  width: 45px;
-}
+  height: 40px;
+  width: 85px;
+}*/
