@@ -75,11 +75,11 @@ function clickedGrid() {
   grid.className = "grid";
   document.querySelector('.grid-container').appendChild(grid);
 
-  for(var i = 0; i < 20; i++){
+  for(var i = 0; i < 35; i++){
     var tr = document.createElement('tr');
     grid.appendChild(tr);
 
-    for(var j = 0; j < 20; j++){
+    for(var j = 0; j < 35; j++){
       var cell = document.createElement('td');
       cell.className = "click-cells";
       tr.appendChild(cell);
