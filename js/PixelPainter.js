@@ -38,6 +38,7 @@ function clickedGrid() {
       cell.className = "clickCells";
       tr.appendChild(cell);
       cell.addEventListener("click", setColor);
+      cell.addEventListener("mousedown", setColor);
 
     }
   }
