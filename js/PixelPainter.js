@@ -20,11 +20,11 @@ var pixelPainter = (function(){
     grid.className = "grid";
     document.querySelector('.grid-container').appendChild(grid);
 
-    for(var i = 0; i < 55; i++){
+    for(var i = 0; i < 45; i++){
       var tr = document.createElement('tr');
       grid.appendChild(tr);
 
-      for(var j = 0; j < 75; j++){
+      for(var j = 0; j < 60; j++){
         var cell = document.createElement('td');
         cell.className = "click-cells";
         tr.appendChild(cell);
