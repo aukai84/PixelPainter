@@ -13,7 +13,7 @@ var pixelPainter = (function(){
     document.getElementById('pixelPainter').appendChild(gridContainer);
   })();
 
-  var currentColor;
+  var currentColor = "white";
 
   var clickedGrid = (function() {
     var grid = document.createElement('table');
@@ -28,8 +28,13 @@ var pixelPainter = (function(){
         var cell = document.createElement('td');
         cell.className = "click-cells";
         tr.appendChild(cell);
-        cell.addEventListener("mousedown", setColor);
-        cell.addEventListener("mousemove", setColor);
+        cell.addEventListener("mouseover", function(){
+          if(event.buttons === 1){
+            this.style.background = currentColor;
+          }
+        });
+        cell.addEventListener("click", setColor);
+
 
       }
     }
@@ -68,7 +73,6 @@ var pixelPainter = (function(){
 
   function setColor() {
     this.style.background = currentColor;
-    console.log(currentColor, 'currentColor');
   }
 
   function grabColor() {
