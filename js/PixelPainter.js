@@ -56,6 +56,7 @@ var pixelPainter = (function(){
         tr.appendChild(cell);
         cell.innerHTML = "  ";
         cell.addEventListener("click", grabColor);
+        cell.addEventListener("click", setDisplayColor);
         cell.style.background = getRandomColor();
       }
      }
@@ -95,10 +96,14 @@ var pixelPainter = (function(){
     var colorNow = document.createElement('div');
     colorNow.id = "current-color";
     document.querySelector(".color-container").appendChild(colorNow);
-    colorNow.innerHTML = "testing";
-    colorNow.style.background = currentColor;
+    colorNow.style.background = "white";
+
 
   })();
+
+  function setDisplayColor() {
+    document.getElementById("current-color").style.background = currentColor;
+  }
 
   function getRandomColor() {
       var letters = '0123456789ABCDEF';
