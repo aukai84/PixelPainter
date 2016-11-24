@@ -96,6 +96,18 @@ var pixelPainter = (function(){
     document.querySelector('.button-container').appendChild(eraseButton);
     eraseButton.innerHTML = "Erase";
     eraseButton.addEventListener("click", eraseColor);
+
+    var saveButton = document.createElement('button');
+    saveButton.className = "save-button";
+    buttonContainer.appendChild(saveButton);
+    saveButton.innerHTML = "Save";
+    saveButton.addEventListener("click", function(){});
+
+    var loadButton = document.createElement('button');
+    loadButton.className = "load-button";
+    buttonContainer.appendChild(loadButton);
+    loadButton.innerHTML = "Load";
+
   })();
 
 
