@@ -13,7 +13,7 @@ var pixelPainter = (function(){
     document.getElementById('pixelPainter').appendChild(gridContainer);
   })();
 
-  var currentColor = "white";
+  var currentColor;
 
   var clickedGrid = (function() {
     var grid = document.createElement('table');
@@ -62,6 +62,38 @@ var pixelPainter = (function(){
   return colorGrid;
   })();
 
+  var buttonBox = (function(){
+
+    var buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+    document.querySelector('.color-container').appendChild(buttonContainer);
+
+    var clearButton = document.createElement('button');
+    clearButton.className = "function-buttons";
+    document.querySelector('.button-container').appendChild(clearButton);
+    clearButton.innerHTML = "Clear";
+    clearButton.addEventListener("click", clearAll);
+
+    var eraseButton = document.createElement('button');
+    eraseButton.className = "function-buttons";
+    document.querySelector('.button-container').appendChild(eraseButton);
+    eraseButton.innerHTML = "Erase";
+    eraseButton.addEventListener("click", eraseColor);
+
+    var saveButton = document.createElement('button');
+    saveButton.className = "function-buttons";
+    buttonContainer.appendChild(saveButton);
+    saveButton.innerHTML = "Save";
+    saveButton.addEventListener("click", savePicture);
+
+    var loadButton = document.createElement('button');
+    loadButton.className = "function-buttons";
+    buttonContainer.appendChild(loadButton);
+    loadButton.innerHTML = "Load";
+    loadButton.addEventListener("click", loadPicture);
+
+  })();
+
   function getRandomColor() {
       var letters = '0123456789ABCDEF';
       var color = '#';
@@ -79,37 +111,6 @@ var pixelPainter = (function(){
     currentColor = this.style.background;
   }
 
-  var buttonBox = (function(){
-
-    var buttonContainer = document.createElement('div');
-    buttonContainer.className = 'button-container';
-    document.querySelector('.color-container').appendChild(buttonContainer);
-
-    var clearButton = document.createElement('button');
-    clearButton.className = "clear-button";
-    document.querySelector('.button-container').appendChild(clearButton);
-    clearButton.innerHTML = "Clear";
-    clearButton.addEventListener("click", clearAll);
-
-    var eraseButton = document.createElement('button');
-    eraseButton.className = "erase-button";
-    document.querySelector('.button-container').appendChild(eraseButton);
-    eraseButton.innerHTML = "Erase";
-    eraseButton.addEventListener("click", eraseColor);
-
-    var saveButton = document.createElement('button');
-    saveButton.className = "save-button";
-    buttonContainer.appendChild(saveButton);
-    saveButton.innerHTML = "Save";
-    saveButton.addEventListener("click", function(){});
-
-    var loadButton = document.createElement('button');
-    loadButton.className = "load-button";
-    buttonContainer.appendChild(loadButton);
-    loadButton.innerHTML = "Load";
-
-  })();
-
 
   function eraseColor(){
     currentColor = "white";
@@ -119,6 +120,25 @@ var pixelPainter = (function(){
     var allPixels = document.getElementsByClassName("click-cells");
     for(var i = 0; i < allPixels.length; i++){
       allPixels[i].style.background = "white";
+    }
+  }
+
+  var colorArray = [];
+
+  function savePicture() {
+    var currentPicture = document.querySelectorAll(".click-cells");
+    for(var i = 0; i < currentPicture.length; i++){
+      colorArray.push(currentPicture[i].style.background);
+    }
+
+    console.log(colorArray);
+
+  }
+
+  function loadPicture() {
+    var currentPicture = document.querySelectorAll(".click-cells");
+    for(var i = 0; i < colorArray.length; i++){
+      currentPicture[i].style.background = colorArray[i];
     }
   }
 
