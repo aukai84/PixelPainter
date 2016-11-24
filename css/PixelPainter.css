@@ -9,17 +9,24 @@ h1 {
 #pixelPainter {
   display: flex;
   flex-direction: row;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
 .color-container {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  padding-top: 50px;
+  height: 100%;
+  width: 150px;
+  background-color: #d3d3d3;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
 .grid-container {
   display: inline-block;
-  margin-left: 200px;
+  margin-left: 220px;
   margin-top: 50px;
   vertical-align: top;
   position: absolute;
@@ -30,6 +37,7 @@ h1 {
 .button-container {
   display: flex;
   flex-direction: column;
+  width: 80px;
 }
 
 .color-grid {
@@ -57,6 +65,7 @@ h1 {
   border-color: grey;
   height: 40px;
   width: 40px;
+
 }
 
 .click-cells: hover {
