@@ -140,6 +140,7 @@ var pixelPainter = (function(){
     for(var i = 0; i < colorArray.length; i++){
       currentPicture[i].style.background = colorArray[i];
     }
+    colorArray = [];
   }
 
 })();
