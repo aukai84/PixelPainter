@@ -14,6 +14,7 @@ h1 {
 .color-container {
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .grid-container {
@@ -34,7 +35,8 @@ h1 {
 .color-grid {
   float: left;
   border-collapse: collapse;
-  vertical-align: top;
+  vertical-align: center;
+
 }
 
 .grid {

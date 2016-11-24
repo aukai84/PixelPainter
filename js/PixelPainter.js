@@ -92,6 +92,12 @@ var pixelPainter = (function(){
     loadButton.innerHTML = "Load";
     loadButton.addEventListener("click", loadPicture);
 
+    var colorNow = document.createElement('div');
+    colorNow.id = "current-color";
+    document.querySelector(".color-container").appendChild(colorNow);
+    colorNow.innerHTML = "testing";
+    colorNow.style.background = currentColor;
+
   })();
 
   function getRandomColor() {
