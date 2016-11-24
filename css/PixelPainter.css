@@ -73,10 +73,10 @@ h1 {
 
 }
 
-/*.clear-button {
+.clear-button {
   display: inline;
   border-color: grey;
   border-style: solid;
   height: 40px;
   width: 85px;
-}*/
+}
