@@ -1,5 +1,3 @@
-var currentColor;
-console.log(currentColor);
 
 //Creates a container div for the color bar, erase, and clear buttons
 var colorContainer = document.createElement('div');
@@ -12,7 +10,30 @@ var gridContainer = document.createElement('div');
 gridContainer.className = "grid-container";
 document.getElementById('pixelPainter').appendChild(gridContainer);
 
-function colorGrid(){
+var clickedGrid = (function() {
+  var grid = document.createElement('table');
+  grid.className = "grid";
+  document.querySelector('.grid-container').appendChild(grid);
+
+  for(var i = 0; i < 45; i++){
+    var tr = document.createElement('tr');
+    grid.appendChild(tr);
+
+    for(var j = 0; j < 65; j++){
+      var cell = document.createElement('td');
+      cell.className = "click-cells";
+      tr.appendChild(cell);
+      cell.addEventListener("click", setColor);
+      cell.addEventListener("mousemove", setColor);
+      cell.innerHTML = "   ";
+    }
+  }
+return grid;
+})();
+
+
+
+(function colorGrid(){
   var colorGrid = document.createElement('table');
   colorGrid.className = "color-grid";
   document.querySelector('.color-container').appendChild(colorGrid);
@@ -31,7 +52,7 @@ function colorGrid(){
     }
    }
     return colorGrid;
-} colorGrid();
+})();
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -49,8 +70,8 @@ function setColor() {
 }
 
 function grabColor() {
-  var thisColor = this.style.background;
-  currentColor = thisColor;
+  currentColor = this.style.background;
+
   // console.log("clickingcolor")
 }
 
@@ -70,25 +91,6 @@ document.querySelector('.button-container').appendChild(eraseButton);
 eraseButton.innerHTML = "Erase";
 eraseButton.addEventListener("click", eraseColor);
 
-function clickedGrid() {
-  var grid = document.createElement('table');
-  grid.className = "grid";
-  document.querySelector('.grid-container').appendChild(grid);
-
-  for(var i = 0; i < 35; i++){
-    var tr = document.createElement('tr');
-    grid.appendChild(tr);
-
-    for(var j = 0; j < 35; j++){
-      var cell = document.createElement('td');
-      cell.className = "click-cells";
-      tr.appendChild(cell);
-      cell.addEventListener("click", setColor);
-      cell.innerHTML = "   ";
-    }
-  }
-return grid;
-} clickedGrid();
 
 function eraseColor(){
   currentColor = "white";
@@ -101,3 +103,5 @@ function clearAll() {
   }
 
 }
+
+var currentColor;

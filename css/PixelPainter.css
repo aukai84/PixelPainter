@@ -1,10 +1,22 @@
+body {
+  background-color: grey;
+}
+
+h1 {
+  margin-bottom: 50px;
+  font-style
+
+}
+
 #pixelPainter {
   display: inline-block;
+
 
 }
 
 .color-container {
   display: inline-block;
+
 
 }
 
@@ -12,11 +24,8 @@
   display: inline-block;
   margin-left: 30px;
   vertical-align: top;
-
-
-  height: 500px;
-  width: 650;
-
+  position: absolute;
+  background-color: white;
 }
 
 .button-container {
@@ -46,24 +55,25 @@
 
 .click-cells {
   border-collapse: collapse;
-  border-style: dotted;
-  border-width: .1px;
-  border-spacing: 0px;
-  border-color: #d3d3d3;
+  border-style: none;
+  border-width: 0px;
+  border-spacing: .1px;
+  border-color: black;
   height: 14px;
   width: 12px;
 
 }
-/*
+
 .erase-button {
   display: inline;
   border-style: solid;
   border-color: grey;
   height: 40px;
   width: 85px;
+
 }
 
-.clear-button {
+/*.clear-button {
   display: inline;
   border-color: grey;
   border-style: solid;
