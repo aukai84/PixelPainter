@@ -127,12 +127,16 @@ var pixelPainter = (function(){
 
   function savePicture() {
     var currentPicture = document.querySelectorAll(".click-cells");
-    for(var i = 0; i < currentPicture.length; i++){
-      colorArray.push(currentPicture[i].style.background);
+    if (colorArray.length === 0){
+      for(var i = 0; i < currentPicture.length; i++){
+        colorArray.push(currentPicture[i].style.background);
+      }
+    } else {
+        colorArray = [];
+        for(var j = 0; j < currentPicture.length; j++){
+        colorArray.push(currentPicture[j].style.background);
+      }
     }
-
-    console.log(colorArray);
-
   }
 
   function loadPicture() {
