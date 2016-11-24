@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: #b3b3b3;
 }
 
 h1 {
@@ -22,6 +22,7 @@ h1 {
   vertical-align: top;
   position: absolute;
   background-color: white;
+
 }
 
 .button-container {
