@@ -17,11 +17,12 @@ h1 {
   display: flex;
   flex-direction: column;
   padding-top: 50px;
+  padding-left: 20px;
   height: 100%;
   width: 150px;
-  background-color: #d3d3d3;
-  margin-left: 0px;
-  margin-top: 0px;
+  background-color: #e3e3e5;
+  margin-left: -8px;
+  margin-top: -8px;
 }
 
 .grid-container {
@@ -35,9 +36,14 @@ h1 {
 }
 
 .button-container {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   width: 80px;
+}
+
+.function-buttons {
+  padding: 5px;
 }
 
 .color-grid {
