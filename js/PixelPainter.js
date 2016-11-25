@@ -20,7 +20,7 @@ var pixelPainter = (function(){
     grid.className = "grid";
     document.querySelector('.grid-container').appendChild(grid);
 
-    for(var i = 0; i < 45; i++){
+    for(var i = 0; i < 50; i++){
       var tr = document.createElement('tr');
       grid.appendChild(tr);
 

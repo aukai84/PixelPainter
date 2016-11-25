@@ -27,8 +27,8 @@ h1 {
 
 .grid-container {
   display: inline-block;
-  margin-left: 220px;
-  margin-top: 50px;
+  margin-left: 250px;
+  margin-top: 80px;
   vertical-align: top;
   position: absolute;
   background-color: white;
@@ -51,6 +51,7 @@ h1 {
   float: left;
   border-collapse: collapse;
   vertical-align: center;
+  margin-top: 50px;
 
 }
 
