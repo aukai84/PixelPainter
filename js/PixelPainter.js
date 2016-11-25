@@ -81,8 +81,20 @@ var pixelPainter = (function(){
     document.getElementById("color-cells50").style.background = "#33cc33";
     document.getElementById("color-cells60").style.background = "#66ff33";
     document.getElementById("color-cells70").style.background = "#ffff00";
-    document.getElementById("color-cells80").style.background = "#black";
-    document.getElementById("color-cells90").style.background = "#black";
+    document.getElementById("color-cells80").style.background = "#ff9900";
+    document.getElementById("color-cells90").style.background = "#ff3300";
+
+    document.getElementById("color-cells01").style.background = "#666699";
+    document.getElementById("color-cells11").style.background = "#6600cc";
+    document.getElementById("color-cells21").style.background = "#6600ff";
+    document.getElementById("color-cells31").style.background = "#9999ff";
+    document.getElementById("color-cells41").style.background = "#ff66ff";
+    document.getElementById("color-cells51").style.background = "#660033";
+    document.getElementById("color-cells61").style.background = "#990033";
+    document.getElementById("color-cells71").style.background = "#ff0066";
+    document.getElementById("color-cells81").style.background = "#ff6600";
+    document.getElementById("color-cells91").style.background = "red";
+
   })();
 
   var buttonBox = (function(){
