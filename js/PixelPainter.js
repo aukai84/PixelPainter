@@ -53,21 +53,36 @@ var pixelPainter = (function(){
     colorGrid.className = "color-grid";
     document.querySelector('.color-container').appendChild(colorGrid);
 
-    for(var i = 0; i < 8; i++){
+    for(var i = 0; i < 10; i++){
       var tr = document.createElement('tr');
       colorGrid.appendChild(tr);
 
       for(var j = 0; j < 2; j++){
         var cell = document.createElement('td');
-        cell.className = "color-cells";
+        cell.id = "color-cells" + i + j;
+        cell.className = "color-palette";
         tr.appendChild(cell);
         cell.innerHTML = "  ";
         cell.addEventListener("click", grabColor);
         cell.addEventListener("click", setDisplayColor);
-        cell.style.background = getRandomColor();
+
+        //cell.style.background = getRandomColor();
       }
      }
   return colorGrid;
+  })();
+
+  var colorPalette = (function(){
+    document.getElementById("color-cells00").style.background = "black";
+    document.getElementById("color-cells10").style.background = "#000066";
+    document.getElementById("color-cells20").style.background = "#0000cc";
+    document.getElementById("color-cells30").style.background = "#006699";
+    document.getElementById("color-cells40").style.background = "#339933";
+    document.getElementById("color-cells50").style.background = "#33cc33";
+    document.getElementById("color-cells60").style.background = "#66ff33";
+    document.getElementById("color-cells70").style.background = "#ffff00";
+    document.getElementById("color-cells80").style.background = "#black";
+    document.getElementById("color-cells90").style.background = "#black";
   })();
 
   var buttonBox = (function(){
@@ -126,7 +141,8 @@ var pixelPainter = (function(){
   }
 
   function grabColor() {
-    currentColor = this.style.background;
+    currentColor = this.style.backgroundColor;
+    console.log("This is my ",currentColor);
   }
 
 

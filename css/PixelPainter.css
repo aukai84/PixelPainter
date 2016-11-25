@@ -79,20 +79,19 @@ h1 {
   position: : absolute;
 }
 
-.color-cells:hover{
+.color-palette:hover{
   cursor: pointer;
   border-color: #48C6D4;
   border-width: 2px;
 }
 
-.color-cells {
+.color-palette {
   border-style: solid;
   border-width: 2px;
   border-spacing: 0px;
   border-color: #d3d3d3;
   height: 40px;
   width: 40px;
-
 }
 
 .click-cells {
