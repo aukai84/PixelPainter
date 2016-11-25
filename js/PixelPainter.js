@@ -7,6 +7,13 @@ var pixelPainter = (function(){
     console.log(colorContainer);
     document.getElementById('pixelPainter').appendChild(colorContainer);
 
+    //creating pixel painter banner inside of Color Container
+
+    var banner = document.createElement("div");
+    colorContainer.appendChild(banner);
+    banner.id = "banner-div";
+    banner.innerHTML = "Pixel Painter";
+
   //Creates a container div for the right side grid area
     var gridContainer = document.createElement('div');
     gridContainer.className = "grid-container";
