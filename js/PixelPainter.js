@@ -96,7 +96,7 @@ var pixelPainter = (function(){
     var colorNow = document.createElement('div');
     colorNow.id = "current-color";
     document.querySelector(".color-container").appendChild(colorNow);
-    colorNow.style.background = "white";
+    colorNow.style.background = "white"
 
 
   })();
