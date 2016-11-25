@@ -12,7 +12,7 @@ var pixelPainter = (function(){
     var banner = document.createElement("div");
     colorContainer.appendChild(banner);
     banner.id = "banner-div";
-    banner.innerHTML = "Pixel Painter";
+    banner.innerHTML = "Random Pixel Painter";
 
   //Creates a container div for the right side grid area
     var gridContainer = document.createElement('div');
@@ -103,7 +103,7 @@ var pixelPainter = (function(){
     var colorNow = document.createElement('div');
     colorNow.id = "current-color";
     document.querySelector(".color-container").appendChild(colorNow);
-    colorNow.style.background = "white"
+    colorNow.style.background = "white";
 
 
   })();
