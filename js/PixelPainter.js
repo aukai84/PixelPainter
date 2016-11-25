@@ -84,7 +84,7 @@ var pixelPainter = (function(){
     document.getElementById("color-cells80").style.background = "#ff9900";
     document.getElementById("color-cells90").style.background = "#ff3300";
 
-    document.getElementById("color-cells01").style.background = "#666699";
+    document.getElementById("color-cells01").style.background = "grey";
     document.getElementById("color-cells11").style.background = "#6600cc";
     document.getElementById("color-cells21").style.background = "#6600ff";
     document.getElementById("color-cells31").style.background = "#9999ff";
