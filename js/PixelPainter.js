@@ -31,7 +31,7 @@ var pixelPainter = (function(){
       var tr = document.createElement('tr');
       grid.appendChild(tr);
 
-      for(var j = 0; j < 60; j++){
+      for(var j = 0; j < 75; j++){
         var cell = document.createElement('td');
         cell.className = "click-cells";
         tr.appendChild(cell);

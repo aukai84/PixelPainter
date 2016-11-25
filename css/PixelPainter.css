@@ -101,7 +101,7 @@ h1 {
   border-width:0px;
   border-spacing:0px;
   height: 8px;
-  width: 8px;
+  width: 6px;
   cursor: cell;
 
 }
@@ -110,6 +110,6 @@ h1 {
   background-color: white;
   width: 90px;
   height: 30px;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 15px;
 }
