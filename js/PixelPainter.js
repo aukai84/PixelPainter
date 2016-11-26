@@ -176,6 +176,7 @@ var pixelPainter = (function(){
     if (colorArray.length === 0){
       for(var i = 0; i < currentPicture.length; i++){
         colorArray.push(currentPicture[i].style.background);
+        console.log(colorArray);
       }
     } else {
         colorArray = [];
@@ -188,7 +189,7 @@ var pixelPainter = (function(){
   function loadPicture() {
     var currentPicture = document.querySelectorAll(".click-cells");
     for(var i = 0; i < colorArray.length; i++){
-      currentPicture[i].style.background = colorArray[i];
+      currentPicture[i].style.backgroundColor = colorArray[i];
     }
   }
 
