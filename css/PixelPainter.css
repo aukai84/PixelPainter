@@ -55,7 +55,7 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 80px;
-  margin-left: 15px;
+  margin-left: 17px;
 }
 
 .function-buttons {
@@ -110,5 +110,5 @@ h1 {
   width: 90px;
   height: 30px;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 17px;
 }
