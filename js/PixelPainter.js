@@ -27,11 +27,11 @@ var pixelPainter = (function(){
     grid.className = "grid";
     document.querySelector('.grid-container').appendChild(grid);
 
-    for(var i = 0; i < 50; i++){
+    for(var i = 0; i < 70; i++){
       var tr = document.createElement('tr');
       grid.appendChild(tr);
 
-      for(var j = 0; j < 75; j++){
+      for(var j = 0; j < 110; j++){
         var cell = document.createElement('td');
         cell.className = "click-cells";
         tr.appendChild(cell);
@@ -139,14 +139,14 @@ var pixelPainter = (function(){
     document.getElementById("current-color").style.backgroundColor = currentColor;
   }
 
-  function getRandomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++ ) {
-          color += letters[Math.floor(Math.random() * 16)];
-      }
-  return color;
-  }
+  // function getRandomColor() {
+  //     var letters = '0123456789ABCDEF';
+  //     var color = '#';
+  //     for (var i = 0; i < 6; i++ ) {
+  //         color += letters[Math.floor(Math.random() * 16)];
+  //     }
+  // return color;
+  // }
 
   function setColor() {
     this.style.backgroundColor = currentColor;
