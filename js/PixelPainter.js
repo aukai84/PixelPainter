@@ -154,7 +154,6 @@ var pixelPainter = (function(){
 
   function grabColor() {
     currentColor = this.style.backgroundColor;
-    console.log("This is my ",currentColor);
   }
 
 
@@ -178,26 +177,24 @@ var pixelPainter = (function(){
     var currentPicture = document.getElementsByClassName("click-cells");
     if (colorArray.length === 0){
       for(var i = 0; i < currentPicture.length; i++){
-        colorArray.push(currentPicture[i].style.background);
+        colorArray.push(currentPicture[i].style.backgroundColor);
       }
+      console.log(currentPicture[0]);
+      console.log(colorArray);
     } else {
         colorArray = [];
         for(var j = 0; j < currentPicture.length; j++){
-        colorArray.push(currentPicture[j].style.background);
+        colorArray.push(currentPicture[j].style.backgroundColor);
       }
     }
 
    var newArray = JSON.stringify(colorArray);
    localStorage.setItem("saveFile", newArray);
-   console.log(localStorage.getItem("saveFile"));
-
-
   }
 
   function loadPicture() {
     var currentPicture = document.getElementsByClassName("click-cells");
     var storedArray = JSON.parse(localStorage.getItem("saveFile"));
-    console.log(storedArray);
     for(var i = 0; i < storedArray.length ; i++){
       currentPicture[i].style.backgroundColor = storedArray[i];
     }
