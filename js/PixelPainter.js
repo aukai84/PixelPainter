@@ -27,11 +27,11 @@ var pixelPainter = (function(){
     grid.className = "grid";
     document.querySelector('.grid-container').appendChild(grid);
 
-    for(var i = 0; i < 70; i++){
+    for(var i = 0; i < 60; i++){
       var tr = document.createElement('tr');
       grid.appendChild(tr);
 
-      for(var j = 0; j < 110; j++){
+      for(var j = 0; j < 90; j++){
         var cell = document.createElement('td');
         cell.className = "click-cells";
         tr.appendChild(cell);
@@ -126,6 +126,11 @@ var pixelPainter = (function(){
     buttonContainer.appendChild(loadButton);
     loadButton.innerHTML = "Load";
     loadButton.addEventListener("click", loadPicture);
+
+    var squareButton = document.createElement('button');
+    squareButton.className = "function-buttons";
+    buttonContainer.appendChild(squareButton);
+    squareButton.innerHTML = "Square";
 
     var colorNow = document.createElement('div');
     colorNow.id = "current-color";
