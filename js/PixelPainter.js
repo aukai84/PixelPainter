@@ -37,7 +37,7 @@ var pixelPainter = (function(){
         tr.appendChild(cell);
         cell.addEventListener("mouseover", function(){
           if(event.buttons === 1){
-            this.style.background = currentColor;
+            this.style.backgroundColor = currentColor;
           }
         });
         cell.addEventListener("click", setColor);
@@ -73,27 +73,27 @@ var pixelPainter = (function(){
   })();
 
   var colorPalette = (function(){
-    document.getElementById("color-cells00").style.background = "black";
-    document.getElementById("color-cells10").style.background = "#000066";
-    document.getElementById("color-cells20").style.background = "#0000cc";
-    document.getElementById("color-cells30").style.background = "#006699";
-    document.getElementById("color-cells40").style.background = "#339933";
-    document.getElementById("color-cells50").style.background = "#33cc33";
-    document.getElementById("color-cells60").style.background = "#66ff33";
-    document.getElementById("color-cells70").style.background = "#ffff00";
-    document.getElementById("color-cells80").style.background = "#ff9900";
-    document.getElementById("color-cells90").style.background = "#ff3300";
+    document.getElementById("color-cells00").style.backgroundColor = "black";
+    document.getElementById("color-cells10").style.backgroundColor = "#000066";
+    document.getElementById("color-cells20").style.backgroundColor = "#0000cc";
+    document.getElementById("color-cells30").style.backgroundColor = "#006699";
+    document.getElementById("color-cells40").style.backgroundColor = "#339933";
+    document.getElementById("color-cells50").style.backgroundColor = "#33cc33";
+    document.getElementById("color-cells60").style.backgroundColor = "#66ff33";
+    document.getElementById("color-cells70").style.backgroundColor = "#ffff00";
+    document.getElementById("color-cells80").style.backgroundColor = "#ff9900";
+    document.getElementById("color-cells90").style.backgroundColor = "#ff3300";
 
-    document.getElementById("color-cells01").style.background = "grey";
-    document.getElementById("color-cells11").style.background = "#6600cc";
-    document.getElementById("color-cells21").style.background = "#6600ff";
-    document.getElementById("color-cells31").style.background = "#9999ff";
-    document.getElementById("color-cells41").style.background = "#ff66ff";
-    document.getElementById("color-cells51").style.background = "#660033";
-    document.getElementById("color-cells61").style.background = "#990033";
-    document.getElementById("color-cells71").style.background = "#ff0066";
-    document.getElementById("color-cells81").style.background = "#ff6600";
-    document.getElementById("color-cells91").style.background = "red";
+    document.getElementById("color-cells01").style.backgroundColor = "grey";
+    document.getElementById("color-cells11").style.backgroundColor = "#6600cc";
+    document.getElementById("color-cells21").style.backgroundColor = "#6600ff";
+    document.getElementById("color-cells31").style.backgroundColor = "#9999ff";
+    document.getElementById("color-cells41").style.backgroundColor = "#ff66ff";
+    document.getElementById("color-cells51").style.backgroundColor = "#660033";
+    document.getElementById("color-cells61").style.backgroundColor = "#990033";
+    document.getElementById("color-cells71").style.backgroundColor = "#ff0066";
+    document.getElementById("color-cells81").style.backgroundColor = "#ff6600";
+    document.getElementById("color-cells91").style.backgroundColor = "red";
 
   })();
 
@@ -130,13 +130,13 @@ var pixelPainter = (function(){
     var colorNow = document.createElement('div');
     colorNow.id = "current-color";
     document.querySelector(".color-container").appendChild(colorNow);
-    colorNow.style.background = "white";
+    colorNow.style.backgroundColor = "white";
 
 
   })();
 
   function setDisplayColor() {
-    document.getElementById("current-color").style.background = currentColor;
+    document.getElementById("current-color").style.backgroundColor = currentColor;
   }
 
   function getRandomColor() {
@@ -149,7 +149,7 @@ var pixelPainter = (function(){
   }
 
   function setColor() {
-    this.style.background = currentColor;
+    this.style.backgroundColor = currentColor;
   }
 
   function grabColor() {
@@ -164,7 +164,7 @@ var pixelPainter = (function(){
   function clearAll() {
     var allPixels = document.getElementsByClassName("click-cells");
     for(var i = 0; i < allPixels.length; i++){
-      allPixels[i].style.background = "white";
+      allPixels[i].style.backgroundColor = "white";
     }
   }
 
