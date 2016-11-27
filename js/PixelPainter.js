@@ -171,12 +171,14 @@ var pixelPainter = (function(){
 
   var colorArray = [];
 
+  var overallPicture;
+
+
   function savePicture() {
-    var currentPicture = document.querySelectorAll(".click-cells");
+    var currentPicture = document.getElementsByClassName("click-cells");
     if (colorArray.length === 0){
       for(var i = 0; i < currentPicture.length; i++){
         colorArray.push(currentPicture[i].style.background);
-        console.log(colorArray);
       }
     } else {
         colorArray = [];
@@ -184,13 +186,24 @@ var pixelPainter = (function(){
         colorArray.push(currentPicture[j].style.background);
       }
     }
+
+   var newArray = JSON.stringify(colorArray);
+   localStorage.setItem("saveFile", newArray);
+   console.log(localStorage.getItem("saveFile"));
+
+
   }
 
   function loadPicture() {
-    var currentPicture = document.querySelectorAll(".click-cells");
-    for(var i = 0; i < colorArray.length; i++){
-      currentPicture[i].style.backgroundColor = colorArray[i];
+    var currentPicture = document.getElementsByClassName("click-cells");
+    var storedArray = JSON.parse(localStorage.getItem("saveFile"));
+    console.log(storedArray);
+    for(var i = 0; i < storedArray.length ; i++){
+      currentPicture[i].style.backgroundColor = storedArray[i];
     }
+
   }
+
+
 
 })();
