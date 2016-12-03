@@ -27,17 +27,17 @@ var pixelPainter = (function(){
     grid.className = "grid";
     document.querySelector('.grid-container').appendChild(grid);
 
-    for(var i = 0; i < 60; i++){
+    for(var i = 0; i < 50; i++){
       var tr = document.createElement('tr');
       grid.appendChild(tr);
 
-      for(var j = 0; j < 90; j++){
+      for(var j = 0; j < 75; j++){
         var cell = document.createElement('td');
         cell.className = "click-cells";
         tr.appendChild(cell);
         cell.addEventListener("mouseover", function(){
           if(event.buttons === 1){
-            this.style.backgroundColor = currentColor;
+            this.style.background = currentColor;
           }
         });
         cell.addEventListener("click", setColor);
@@ -73,27 +73,27 @@ var pixelPainter = (function(){
   })();
 
   var colorPalette = (function(){
-    document.getElementById("color-cells00").style.backgroundColor = "black";
-    document.getElementById("color-cells10").style.backgroundColor = "#000066";
-    document.getElementById("color-cells20").style.backgroundColor = "#0000cc";
-    document.getElementById("color-cells30").style.backgroundColor = "#006699";
-    document.getElementById("color-cells40").style.backgroundColor = "#339933";
-    document.getElementById("color-cells50").style.backgroundColor = "#33cc33";
-    document.getElementById("color-cells60").style.backgroundColor = "#66ff33";
-    document.getElementById("color-cells70").style.backgroundColor = "#ffff00";
-    document.getElementById("color-cells80").style.backgroundColor = "#ff9900";
-    document.getElementById("color-cells90").style.backgroundColor = "#ff3300";
+    document.getElementById("color-cells00").style.background = "black";
+    document.getElementById("color-cells10").style.background = "#000066";
+    document.getElementById("color-cells20").style.background = "#0000cc";
+    document.getElementById("color-cells30").style.background = "#006699";
+    document.getElementById("color-cells40").style.background = "#339933";
+    document.getElementById("color-cells50").style.background = "#33cc33";
+    document.getElementById("color-cells60").style.background = "#66ff33";
+    document.getElementById("color-cells70").style.background = "#ffff00";
+    document.getElementById("color-cells80").style.background = "#ff9900";
+    document.getElementById("color-cells90").style.background = "#ff3300";
 
-    document.getElementById("color-cells01").style.backgroundColor = "grey";
-    document.getElementById("color-cells11").style.backgroundColor = "#6600cc";
-    document.getElementById("color-cells21").style.backgroundColor = "#6600ff";
-    document.getElementById("color-cells31").style.backgroundColor = "#9999ff";
-    document.getElementById("color-cells41").style.backgroundColor = "#ff66ff";
-    document.getElementById("color-cells51").style.backgroundColor = "#660033";
-    document.getElementById("color-cells61").style.backgroundColor = "#990033";
-    document.getElementById("color-cells71").style.backgroundColor = "#ff0066";
-    document.getElementById("color-cells81").style.backgroundColor = "#ff6600";
-    document.getElementById("color-cells91").style.backgroundColor = "red";
+    document.getElementById("color-cells01").style.background = "grey";
+    document.getElementById("color-cells11").style.background = "#6600cc";
+    document.getElementById("color-cells21").style.background = "#6600ff";
+    document.getElementById("color-cells31").style.background = "#9999ff";
+    document.getElementById("color-cells41").style.background = "#ff66ff";
+    document.getElementById("color-cells51").style.background = "#660033";
+    document.getElementById("color-cells61").style.background = "#990033";
+    document.getElementById("color-cells71").style.background = "#ff0066";
+    document.getElementById("color-cells81").style.background = "#ff6600";
+    document.getElementById("color-cells91").style.background = "red";
 
   })();
 
@@ -127,38 +127,34 @@ var pixelPainter = (function(){
     loadButton.innerHTML = "Load";
     loadButton.addEventListener("click", loadPicture);
 
-    var squareButton = document.createElement('button');
-    squareButton.className = "function-buttons";
-    buttonContainer.appendChild(squareButton);
-    squareButton.innerHTML = "Square";
-
     var colorNow = document.createElement('div');
     colorNow.id = "current-color";
     document.querySelector(".color-container").appendChild(colorNow);
-    colorNow.style.backgroundColor = "white";
+    colorNow.style.background = "white";
 
 
   })();
 
   function setDisplayColor() {
-    document.getElementById("current-color").style.backgroundColor = currentColor;
+    document.getElementById("current-color").style.background = currentColor;
   }
 
-  // function getRandomColor() {
-  //     var letters = '0123456789ABCDEF';
-  //     var color = '#';
-  //     for (var i = 0; i < 6; i++ ) {
-  //         color += letters[Math.floor(Math.random() * 16)];
-  //     }
-  // return color;
-  // }
+  function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+          color += letters[Math.floor(Math.random() * 16)];
+      }
+  return color;
+  }
 
   function setColor() {
-    this.style.backgroundColor = currentColor;
+    this.style.background = currentColor;
   }
 
   function grabColor() {
     currentColor = this.style.backgroundColor;
+    console.log("This is my ",currentColor);
   }
 
 
@@ -169,43 +165,32 @@ var pixelPainter = (function(){
   function clearAll() {
     var allPixels = document.getElementsByClassName("click-cells");
     for(var i = 0; i < allPixels.length; i++){
-      allPixels[i].style.backgroundColor = "white";
+      allPixels[i].style.background = "white";
     }
   }
 
   var colorArray = [];
 
-  var overallPicture;
-
-
   function savePicture() {
-    var currentPicture = document.getElementsByClassName("click-cells");
+    var currentPicture = document.querySelectorAll(".click-cells");
     if (colorArray.length === 0){
       for(var i = 0; i < currentPicture.length; i++){
-        colorArray.push(currentPicture[i].style.backgroundColor);
+        colorArray.push(currentPicture[i].style.background);
+        console.log(colorArray);
       }
-      console.log(currentPicture[0]);
-      console.log(colorArray);
     } else {
         colorArray = [];
         for(var j = 0; j < currentPicture.length; j++){
-        colorArray.push(currentPicture[j].style.backgroundColor);
+        colorArray.push(currentPicture[j].style.background);
       }
     }
-
-   var newArray = JSON.stringify(colorArray);
-   localStorage.setItem("saveFile", newArray);
   }
 
   function loadPicture() {
-    var currentPicture = document.getElementsByClassName("click-cells");
-    var storedArray = JSON.parse(localStorage.getItem("saveFile"));
-    for(var i = 0; i < storedArray.length ; i++){
-      currentPicture[i].style.backgroundColor = storedArray[i];
+    var currentPicture = document.querySelectorAll(".click-cells");
+    for(var i = 0; i < colorArray.length; i++){
+      currentPicture[i].style.backgroundColor  = colorArray[i];
     }
-
   }
-
-
 
 })();
